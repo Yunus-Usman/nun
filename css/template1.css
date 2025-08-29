@@ -1,0 +1,432 @@
+/* ================================
+   FRAME UNDANGAN
+================================ */
+.frames-container {
+  display: flex;
+  flex-direction: column; /* frame ditumpuk vertikal */
+  align-items: center;    /* center di tengah */
+  gap: 20px;              /* jarak antar frame */
+  padding: 10px 0;
+  background: #00a732;    /* warna background luar */
+}
+
+/* Frame per section */
+.frame {
+  width: 400px;      /* lebar HP */
+  height: 100vh;              /* penuh 1 layar */
+
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border: px solid #ccc;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: px;
+}
+/* Frame Cover dengan background gambar */
+.frame-cover {
+
+}
+
+
+
+
+/* ================================
+   BUNGA HIASAN
+================================ */
+.flower-anim {
+  position: absolute;
+  width: 90px;
+  z-index: 3;
+ 
+  pointer-events: none;
+  transition: transform 1.5s cubic-bezier(.4,2,.6,1);
+  will-change: transform;
+}
+
+/* Posisi bunga */
+.flower-info-left {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 600px; 
+  animation: flowerFloatRight 6s ease-in-out infinite alternate;
+}
+
+.flower-info-right {
+  position: absolute;
+  right: 10px;  
+  bottom: -300px;  /* geser ke atas */
+  right: -40px;   /* geser ke kiri */
+  width: 500px; 
+  z-index: 0;
+  animation: flowerFloatRight 6s ease-in-out infinite alternate;
+}
+
+.flower-info-top {
+  top: -5px;
+  left: -150px;  
+  transform: translateY(-50%);
+  width: 600px;  
+  animation: flowerFloatTop 7s ease-in-out infinite alternate;
+}
+
+/* ================================
+   ANIMASI FLOATING
+================================ */
+@keyframes flowerFloatLeft {
+  0%   { transform: translateY(-50%) translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-50%) translateY(-15px) rotate(3deg); }
+  100% { transform: translateY(-50%) translateY(0) rotate(0deg); }
+}
+
+@keyframes flowerFloatRight {
+  0%   { transform: translateY(-50%) translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-50%) translateY(-15px) rotate(-3deg); }
+  100% { transform: translateY(-50%) translateY(0) rotate(0deg); }
+}
+
+@keyframes flowerFloatTop {
+  0%   { transform: translateX(-50%) translateY(0) scale(1); }
+  50%  { transform: translateX(-50%) translateY(-10px) scale(1.05); }
+  100% { transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+/* ================================
+/* ================================
+   NAMA IMG
+================================ */
+.frame-nama-img {
+  position: absolute;
+  top: 20px;
+  left: -12%;
+  transform: translateX(-50%);
+  max-width: 500px;
+  z-index: 10;
+}
+.nama-mempelai {
+  position: relative;
+  font-family: 'Great Vibes', cursive;
+  color: #8d3a0a;
+  font-weight: 600;
+  font-size: 2rem;
+   line-height: 2rem; /* atur jarak antar baris */
+  top: -10px;
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.the-wedding {
+  position: relative;
+  top: -50px;
+  display: block;
+  font-family: 'Alex Brush', cursive;
+  font-size: 1rem;
+  color: #000000; 
+  font-weight: 500;
+  margin-bottom: -10px;
+}
+.dan {
+  display: inline-block;
+  margin: 0 10px;
+  font-family: 'Alex Brush', cursive;
+  font-size: 2.9rem;
+  color: #807b76;
+  font-weight: 500;
+  position: relative;
+  top: -10px;
+  margin-left: 80px;
+}
+.nama-pria {
+  display: block;
+  margin-top: -40px;
+  margin-left: -50px;  /* geser kanan */
+}
+.nama-wanita {
+  display: block;
+    margin-left: 50px;
+}
+.tanggal-acara {
+  position: relative;      /* biar z-index bisa dipakai */
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #000000;             /* warna teks */
+  padding: 5px 10px;       /* jarak dalam kotak */
+  border-radius: 50px;     /* sudut melengkung */
+  top: 3px;
+  font-weight: 500;
+  z-index: 10;             /* biar muncul di atas gambar bunga */
+  text-align: center;
+}
+/* ================================
+   BUTTON STYLE
+================================ */
+.btn-group {
+  position: relative;
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index:10;
+  top: 200px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #af5151, #912d2d);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(175,81,81,0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #912d2d, #701919);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(145,45,45,0.45);
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #ffffff;
+  color: #af5151;
+  border: 2px solid #af5151;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #af5151;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(175,81,81,0.3);
+}
+
+
+
+/* ================================
+   Frame Info Content
+================================ */
+.info-content {
+  background: rgba(207, 18, 18, 0.2);  /* putih transparan */
+  border-radius: 20px;
+  width: 200px;
+  height: 400px;
+  padding: 20px;
+  text-align: center;
+  color: #000000;
+  z-index: 2; /* pastikan di atas bunga */
+
+  /* Efek kaca blur */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* untuk Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* garis tipis transparan */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* tetap ada shadow elegan */
+}
+
+
+/* ================================
+   ANIMASI ELEMEN FRAME
+================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ================================
+   ANIMASI ELEMEN FRAME
+   
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+   ANIMASI ELEMEN FRAME
+
+/* ================================
+   JENIS-JENIS ANIMASI YANG TERSEDIA
+================================ */
+
+/* 1. Fade In dari Bawah (Default) */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 2s forwards;
+}
+
+/* 2. Fade In dari Atas */
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeInDown 1s forwards;
+}
+
+/* 3. Fade In dari Kiri */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeInLeft 1s forwards;
+}
+
+/* 4. Fade In dari Kanan */
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: fadeInRight 1s forwards;
+}
+
+/* 5. Zoom In */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoomIn 1s forwards;
+}
+
+/* 6. Zoom Out */
+.zoom-out {
+  opacity: 0;
+  transform: scale(1.2);
+  animation: zoomOut 1s forwards;
+}
+
+/* 7. Rotate In */
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-15deg);
+  animation: rotateIn 1s forwards;
+}
+
+/* 8. Bounce In */
+.bounce-in {
+  opacity: 0;
+  transform: scale(0.3);
+  animation: bounceIn 1s forwards;
+}
+
+/* 9. Slide In dengan Efek Elastic */
+.slide-elastic {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideElastic 1s forwards;
+}
+
+/* ================================
+   KEYFRAMES UNTUK SETIAP ANIMASI
+================================ */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideElastic {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   CONTOH PENGGUNAAN:
+   Ganti kelas pada elemen HTML dengan salah satu kelas di atas:
+   
+   Contoh: 
+   <div class="frame-cover reveal fade-in-up">...</div>
+   <div class="frame-cover reveal zoom-in">...</div>
+   <div class="frame-cover reveal bounce-in">...</div>
+================================ */
