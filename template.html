@@ -1,118 +1,593 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Template - FDigital</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body class="bg-main">
-  <!-- Navbar -->
-  <!-- Navbar -->
-  <nav class="navbar-custom flex justify-between items-center p-4 sticky top-0 z-50">
-    <img src="images/logo.png" alt="FDigital Logo" class="h-10" />
-    <!-- Hamburger Button (mobile only) -->
-    <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none" aria-label="Menu">
-      <span class="block w-6 h-0.5 bg-gray-800 mb-1"></span>
-      <span class="block w-6 h-0.5 bg-gray-800 mb-1"></span>
-      <span class="block w-6 h-0.5 bg-gray-800"></span>
-    </button>
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex gap-6">
-      <li><a href="home.html">Beranda</a></li>
-      <li><a href="template.html">Template</a></li>
-      <li><a href="harga.html">Harga</a></li>
-      <li><a href="testimoni.html">Testimoni</a></li>
-    </ul>
-    <a href="#" class="btn-primary hidden md:inline-block">Daftar Gratis</a>
-  </nav>
-  <!-- Mobile Menu (Dropdown, tidak menutupi seluruh halaman) -->
-  <div id="mobile-menu" class="fixed top-16 right-4 w-56 bg-white rounded-xl shadow-lg z-50 flex-col items-start gap-4 py-4 px-6 transition-all duration-300 opacity-0 pointer-events-none scale-95 md:hidden">
-    <button id="close-menu" class="absolute top-2 right-3 text-2xl font-bold text-gray-800">&times;</button>
-    <ul class="flex flex-col gap-4 text-base font-semibold text-gray-800 w-full">
-      <li><a href="home.html">Beranda</a></li>
-      <li><a href="template.html">Template</a></li>
-      <li><a href="harga.html">Harga</a></li>
-      <li><a href="testimoni.html">Testimoni</a></li>
-      <li><a href="#" class="btn-primary mt-2 w-full text-center">Daftar Gratis</a></li>
-    </ul>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fulan ❤️ Fulanah</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.png">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans&display=swap" rel="stylesheet">
+    <!-- Aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- //lightbox2// -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css" integrity="sha512-xtV3HfYNbQXS/1R1jP53KbFcU9WXiSA1RFKzl5hRlJgdOJm4OxHCWYpskm6lN0xp0XtKGpAfVShpbvlFH3MDAA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body class="overflow-hidden"> 
+    <!-- Music -->
+    <audio src="assets/music/wedding1.mp3" loop class="music"></audio>
+    <!-- Sfx Door -->
+    <audio src="assets/music/door.mp3" class="sound-door"></audio>
+
+    <!-- Door Section -->
+    <div id="door-section" class="open" onclick="mulai()">
+      <h1 class="heading-door left huruf-sambung">Yunus</h1>
+      <h1 class="heading-door right huruf-sambung">Fulanah</h1>
+      <div class="doors">
+        <div class="door left">
+          <img src="assets/img/door-left.png" alt="left door">
+        </div>
+        <div class="door right">
+          <img src="assets/img/door-right.png" alt="right door">
+        </div>
+      </div>
+    </div>
+
+<!-- content section -->
+ 
+<div id="content-section">
+  <!-- navbar -->
+  <ul class="nav">
+    
+
+    <!-- Acara -->
+    <li>
+      <a href="#acara-section">
+        <i class="fas fa-fw fa-calendar-day"></i>
+        <span class="icon-label">Acara</span>
+      </a>
+    </li>
+
+    <!-- Lokasi -->
+    <li>
+      <a href="#lokasi-section">
+        <i class="fas fa-fw fa-location-dot"></i>
+        <span class="icon-label">Lokasi</span>
+      </a>
+    </li>
+
+    <!-- Love Story -->
+    <li>
+      <a href="#love-story-section">
+        <i class="fas fa-fw fa-heart"></i>
+        <span class="icon-label">Story</span>
+      </a>
+    </li>
+
+    <!-- Gallery -->
+    <li>
+      <a href="#gallery-section">
+        <i class="fas fa-fw fa-image"></i>
+        <span class="icon-label">Galeri</span>
+      </a>
+    </li>
+
+    <!-- Gift -->
+    <li>
+      <a href="#gift-section">
+        <i class="fas fa-fw fa-gift"></i>
+        <span class="icon-label">Hadiah</span>
+      </a>
+    </li>
+
+    <!-- RSVP -->
+    <li>
+      <a href="#rsvp-section">
+        <i class="fas fa-fw fa-check-to-slot"></i>
+        <span class="icon-label">Rsvp</span>
+      </a>
+    </li>
+    <!-- Tombol Musik -->
+    <li>
+      <a href="#" class="nav-item-music" id="music-button" onclick="toggleMusic(event)">
+    <i class="fas fa-fw fa-compact-disc rotate"></i>
+    <span class="icon-label">Music</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<section id="hero-section" class="d-flex align-items-center">
+  <img src="assets/img/sparkle.gif" alt="sparkle" class="sparkle">
+  <div class="container text-center">
+    <h4 class="my-2 text-dark">Kepada <span id="nama-sambutan"></span></h4>
+    <h1 class="my-2 text-dark huruf-sambung">Nobita & Shizuka</h1>
+    <h4 class="my-2 text-dark">Akan segera melangsungkan pernikahan pada tanggal</h4>
+    <h4 class="my-2 text-dark fw-bold">Sabtu, 10 Februari 2026</h4>
+
+    <div class="row my-3 d-flex justify-content-center" id="countdown-wedding">
+      <div class="col-lg-1 col-3">
+        <div class="text-center p-2 rounded text-dark"><h5>0</h5> Hari</div>
+      </div>
+      <div class="col-lg-1 col-3">
+        <div class="text-center p-2 rounded text-dark"><h5>0</h5> Jam</div>
+      </div>
+      <div class="col-lg-1 col-3">
+        <div class="text-center p-2 rounded text-dark"><h5>0</h5> Menit</div>
+      </div>
+      <div class="col-lg-1 col-3">
+        <div class="text-center p-2 rounded text-dark"><h5>0</h5> Detik</div>
+      </div>
+    </div>
+
+    <a href="#pembuka-section" class="rounded-pill btn btn-lg btn-get-started py-3">
+      <i class="fas fa-fw fa-envelope-open-text"></i> Buka Undangan
+    </a>
+  </div>
+</section>
+
+<!-- Section Pembuka -->
+ <section id="pembuka-section" class="pembuka-section section-bg py-5">
+   <!-- dekorasi bunga -->
+  <div class="flower flower-top-left" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
+    <img src="assets/img/flower.png" alt="bunga" />
+  </div>
+  <div class="flower flower-bottom-right" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
+    <img src="assets/img/flower.png" alt="bunga" />
   </div>
 
-  <!-- Konten utama, tambahkan mt-16 agar tidak tertutup navbar -->
-  <main class="mt-16">
-    <!-- Template Showcase -->
-    <section class="p-10 fade-in">
-      <h2 class="text-3xl font-bold mb-6">Template Undangan Terpopuler</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="template-card">Template Pernikahan 🌸</div>
-        <div class="template-card">Template Khitanan 🎉</div>
-        <div class="template-card">Template Ulang Tahun 🎂</div>
-        <div class="template-card">Template Wisuda 🎓</div>
-        <div class="template-card">Template Syukuran 🙏</div>
-        <div class="template-card">Template Custom 🖌️</div>
+  <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-title text-center">
+          <h1 class="text-white huruf-sambung fw-bold">Assalamu'alaikum</h1>
+          <h3>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h3>
+          <p>
+            Wahai manusia, bertakwalah kepada Tuhanmu yang telah menciptakanmu dari diri yang satu (Adam) dan Dia menciptakan darinya pasangannya (Hawa). Dari keduanya Allah memperkembangbiakkan laki-laki dan perempuan yang banyak. (143) Bertakwalah kepada Allah yang dengan nama-Nya kamu saling meminta dan (peliharalah) hubungan kekeluargaan. Sesungguhnya Allah selalu menjaga dan mengawasimu.
+          </p>
+          <p>(QS. An-Nisa' (4): 1)</p>
+        </div>
+        <div class="row my-4 justify-content-center">
+          <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+            <img src="assets/img/wedding1.jpg" alt="wedding" class="img-fluid rounded-pill">
+          </div>
+        </div>
+        <div class="row my-3 justify-content-between">
+          <div class="col rounded" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+            <div class="p-2 pt-3 text-center"></div>
+            <h1 class="text-center huruf-sambung">Nobita Nobi</h1>
+            <p>Putra pertama dari pasangan:</p>
+            <p>Nobisuke Nobi & Tamako Nobi</p>
+          </div>
+          <div class="col-sm-1 my-auto" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+            <h1 class="text-center huruf-sambung">&</h1>
+          </div>
+          <div class="col rounded" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+            <div class="p-2 pt-3 text-center">
+              <h1 class="text-center huruf-sambung">Shizuka Minamoto</h1>
+              <p>Putri pertama dari pasangan:</p>
+              <p>Yoshio Minamoto & Michiko Minamoto</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-    
-      <!-- Template Undangan (Frame Handphone) -->
-      <section class="p-10 fade-in">
-        <h2 class="text-3xl font-bold mb-6">Template Undangan (Mobile View)</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
-          <!-- Card Template -->
-          <div class="flex flex-col items-center">
-            <div class="relative group rounded-2xl overflow-hidden shadow-lg border border-gray-200" style="width:375px; height:667px;">
-              <img src="images/template1.jpg" alt="Template 1" class="w-full h-full object-cover" />
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                <button class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-rose-600 font-semibold shadow hover:scale-105 transition">
-                  <!-- Icon Mata -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  Preview
-                </button>
-              </div>
-            </div>
-            <button class="mt-4 bg-rose-500 text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-rose-600 transition">Gunakan Template</button>
-          </div>
-          <!-- Duplikat card di bawah ini untuk template lain -->
-          <div class="flex flex-col items-center">
-            <div class="relative group rounded-2xl overflow-hidden shadow-lg border border-gray-200" style="width:375px; height:667px;">
-              <img src="images/template2.jpg" alt="Template 2" class="w-full h-full object-cover" />
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                <button class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-rose-600 font-semibold shadow hover:scale-105 transition">
-                  <!-- Icon Mata -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  Preview
-                </button>
-              </div>
-            </div>
-            <button class="mt-4 bg-rose-500 text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-rose-600 transition">Gunakan Template</button>
-          </div>
-          <!-- Tambahkan card lain sesuai kebutuhan -->
-    </section>
-  </main>
-  <script src="js/main.js"></script>
-  <script>
-const menuBtn = document.getElementById("menu-btn");
-const mobileMenu = document.getElementById("mobile-menu");
-const closeMenu = document.getElementById("close-menu");
+    </div>
+  </div>
+</section>
 
-if (menuBtn && mobileMenu) {
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.remove("opacity-0", "pointer-events-none", "scale-95");
-    mobileMenu.classList.add("opacity-100", "pointer-events-auto", "scale-100");
-  });
-}
-if (closeMenu && mobileMenu) {
-  closeMenu.addEventListener("click", () => {
-    mobileMenu.classList.add("opacity-0", "pointer-events-none", "scale-95");
-    mobileMenu.classList.remove("opacity-100", "pointer-events-auto", "scale-100");
-  });
-}
-</script>
-</body>
+<!-- Acara Section -->
+<section id="acara-section" class="acara-section py-5">
+  <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-title">
+          <h1 class="text-pink huruf-sambung fw-bold">Acara Pernikahan</h1>
+          <p>
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restunya, kami ucapkan terima kasih.
+          </p>
+        </div>
+
+        <div class="row justify-content-between px-3 text-center">
+          <!-- Akad Nikah -->
+          <div class="col-lg-6 border my-2 rounded p-3 card-acara" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+            <h4>Akad Nikah</h4>
+            <hr>
+            <p><i class="fas fa-fw fa-calendar-day"></i> Sabtu, 5 Oktober 2024</p>
+            <p><i class="fas fa-fw fa-clock"></i> 09:00 WIB - 12:00 WIB</p>
+            <p><i class="fas fa-fw fa-location-dot"></i> Lokasi di Jakarta</p>
+            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah&details=Akad+Nikah+Nobita+dan+Shizuka&location=Salah+satu+hotel+di+Jakarta&dates=20241005T020000Z%2F20241005T050000Z" 
+               class="btn btn-lg btn-pink rounded-pill" target="_blank">
+              <i class="fas fa-fw fa-calendar-day"></i> Simpan ke Kalender
+            </a>
+          </div>
+
+          <!-- Resepsi -->
+          <div class="col-lg-6 border my-2 rounded p-3 card-acara" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+            <h4>Resepsi</h4>
+            <hr>
+            <p><i class="fas fa-fw fa-calendar-day"></i> Minggu, 6 Oktober 2024</p>
+            <p><i class="fas fa-fw fa-clock"></i> 09:00 WIB - 12:00 WIB</p>
+            <p><i class="fas fa-fw fa-location-dot"></i> Lokasi di Jakarta</p>
+            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Nikah&details=Resepsi+Nikah+Nobita+dan+Shizuka&location=Salah+satu+hotel+di+Jakarta&dates=20241006T020000Z%2F20241006T050000Z" 
+               class="btn btn-lg btn-pink rounded-pill" target="_blank">
+              <i class="fas fa-fw fa-calendar-day"></i> Simpan ke Kalender
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lokasi Section -->
+<section id="lokasi-section" class="lokasi-section py-5 section-bg">
+  <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-title">
+          <h1 class="text-pink huruf-sambung fw-bold">Lokasi Akad & Resepsi Pernikahan</h1>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center">
+            <a href="https://maps.app.goo.gl/nvtD2Mz8yAJBFotu8" target="_blank" class="btn btn-lg btn-pink rounded-pill mb-4">
+              <i class="fas fa-fw fa-location-dot"></i> Buka di Google Maps
+            </a>
+            <iframe 
+              class="mb-4 mb-lg-0 border-pink"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15866.711766702438!2d106.82892634006731!3d-6.173450190437329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cc097e35db%3A0x73026729335a095b!2sHotel%20Borobudur%20Jakarta!5e0!3m2!1sid!2sid!4v1727064154307!5m2!1sid!2sid" 
+              width="100%" 
+              height="450"
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Love Story Section -->
+  <section id="love-story-section" class="love-story-section py-5">
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="section-title">
+        <h1 class="text-pink huruf-sambung fw-bold">Love Story</h1>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg">
+          <ul class="timeline">
+            <ul class="timeline">
+    <li data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-1.jpg');">
+      </div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">Perkenalan Lewat Perantara</h3>
+          <span class="timeline-date">Januari 2023</span>
+        </div>
+        <div class="timeline-body">
+          <p>
+            Fulan dan Fulanah pertama kali saling mengenal melalui perantara seorang ustadz yang dipercaya. 
+            Dengan niat yang tulus mencari pasangan hidup, biodata keduanya saling dipertukarkan tanpa ada interaksi langsung.
+          </p>
+        </div>
+      </div>
+    </li>
+    
+    <li class="timeline-inverted" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-2.jpg');">
+      </div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">Proses Nadzor</h3>
+          <span class="timeline-date">Februari 2023</span>
+        </div>
+        <div class="timeline-body">
+          <p>
+            Setelah melalui istikharah, Fulan dipertemukan dengan Fulanah dalam sebuah nadzor sederhana. 
+            Pertemuan singkat itu menjadi langkah awal yang penuh keberkahan untuk saling melihat kesungguhan dan niat baik masing-masing.
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-3.jpg');">
+      </div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">Khitbah</h3>
+          <span class="timeline-date">Maret 2023</span>
+        </div>
+        <div class="timeline-body">
+          <p>
+            Dengan izin Allah, Fulan bersama keluarganya datang melamar Fulanah secara resmi. 
+            Lamaran diterima dengan penuh suka cita, menjadi tanda dimulainya ikatan yang lebih kuat menuju pernikahan.
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-inverted" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-4.jpg');">
+      </div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">Persiapan Pernikahan</h3>
+          <span class="timeline-date">Mei – September 2023</span>
+        </div>
+        <div class="timeline-body">
+          <p>
+            Keduanya menyiapkan pernikahan dengan tetap menjaga batas syar’i. 
+            Doa dan dukungan dari keluarga serta sahabat menjadi penyemangat dalam menyongsong hari yang penuh berkah.
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-5.jpg');">
+      </div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">Akad Nikah</h3>
+          <span class="timeline-date">5 Oktober 2023</span>
+        </div>
+        <div class="timeline-body">
+          <p>
+            Dengan lafaz akad yang sederhana namun penuh makna, Fulan resmi menikahi Fulanah. 
+            Doa dari keluarga dan kerabat mengiringi momen sakral ini, menjadikan keduanya suami istri yang sah di hadapan Allah.
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-inverted" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-6.jpg');">
+      </div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">Walimatul ‘Ursy</h3>
+          <span class="timeline-date">6 Oktober 2023</span>
+        </div>
+        <div class="timeline-body">
+          <p>
+            Keesokan harinya, walimah pernikahan digelar sebagai wujud syukur atas nikmat Allah. 
+            Para tamu hadir memberikan doa dan restu, menjadikan suasana penuh kebahagiaan dan keberkahan.
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-7.jpg');">
+      </div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">Mengarungi Bahtera Rumah Tangga</h3>
+          <span class="timeline-date">Oktober 2023 – Sekarang</span>
+        </div>
+        <div class="timeline-body">
+          <p>
+            Fulan dan Fulanah kini menjalani kehidupan rumah tangga dengan penuh cinta dan kasih sayang. 
+            Mereka berkomitmen untuk saling menguatkan dalam taat kepada Allah, menapaki perjalanan bersama menuju ridha-Nya.
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>       
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Gallery Section -->
+<section id="gallery-section" class="gallery-section py-5 section-bg">
+  <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+    <div class="section-title">
+      <h1 class="huruf-sambung text-pink fw-bold">Gallery</h1>
+    </div>
+    <div class="row" data-masonry='{"percentPosition": true }'>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <a href="assets/img/gallery/1.jpeg" data-lightbox="nobitaShizuka" class="text-decoration-none">
+          <img src="assets/img/gallery/1.jpeg" alt="Nobita & Shizuka" class="card-img border-pink">
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <a href="assets/img/gallery/1.jpeg" data-lightbox="nobitaShizuka" class="text-decoration-none">
+          <img src="assets/img/gallery/1.jpeg" alt="Nobita & Shizuka" class="card-img border-pink">
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <a href="assets/img/gallery/1.jpeg" data-lightbox="nobitaShizuka" class="text-decoration-none">
+          <img src="assets/img/gallery/1.jpeg" alt="Nobita & Shizuka" class="card-img border-pink">
+        </a>
+      </div>
+    
+    </div>
+
+    <div class="row justify-content-center">
+<div class="col-12 text-center">
+<iframe class="border-pink" width="100%" height="500" src="https://www.youtube.com/embed/aaWrLldCkJI? si=FdRWkTWJUfWWA090" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="
+strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+  </div>
+</section>
+
+<!-- Section Gift -->
+<section id="gift-section" class="gift-section py-5">
+  <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500"></div>>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-title">
+          <h1 class="huruf-sambung text-pink fw-bold">Wedding Gift</h1>
+          <p>Bagi Bapak/Ibu/Saudara/i yang ingin mengirimkan hadiah pernikahan dapat melalui virtual account atau
+            e-wallet di bawah ini.</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <button type="button" class="text-center btn btn-lg btn-pink mb-4 rounded-pill" data-bs-toggle="collapse"
+              data-bs-target="#collapseHadiah"><i class="fas fa-fw fa-gift"></i> Kirim Hadiah</button>
+            <div class="collapse" id="collapseHadiah">
+              <div class="my-4 mx-auto position-relative credit-card">
+                <img src="assets/img/card/logo-bni.png" alt="Logo BNI" class="card-logo">
+                <div class="card-container">
+                  <img src="assets/img/card/sim.png" alt="sim" class="card-sim">
+                  <div class="card-number">1489 9692 713</div>
+                </div>
+                <div class="card-name mt-2">Yunus Usman</div>
+                <a style="cursor: pointer;" onclick="copyText(this)" class="copy-button btn btn-light mt-3">
+                  <i class="fas fa-fw fa-copy"></i>
+                  Copy
+                </a>
+              </div>
+
+              <div class="my-4 mx-auto position-relative credit-card">
+                <img src="assets/img/card/logo-dana.png" alt="Logo DANA" class="card-logo">
+                <div class="card-container">
+                  <img src="assets/img/card/sim.png" alt="sim" class="card-sim">
+                  <div class="card-number">0852 4241 0880</div>
+                </div>
+                <div class="card-name mt-2">Yunus Usman</div>
+                <a style="cursor: pointer;" onclick="copyText(this)" class="copy-button btn btn-light mt-3">
+                  <i class="fas fa-fw fa-copy"></i>
+                  Copy
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section RSVP -->
+
+<section id="rsvp-section" class="rsvp-section section-bg py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-title text-center">
+          <h1 class="text-pink huruf-sambung fw-bold">RSVP</h1>
+          <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran Anda.</p>
+        </div>
+        <form action="https://script.google.com/macros/s/AKfycbzj1818MXFK8A3Wro29kuwK7YPQJ6C0-SnKtJJwolquZcI2RYxx8w_E0COSOUXsg2zP/exec" method="POST" id="rsvp-form" class="row row-cols-md-auto g-3 align-items-center justify-content-center">
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="nama">Nama</label>
+              <input type="text" id="nama" name="nama" class="form-control" required>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="jumlah">Jumlah</label>
+              <input type="number" id="jumlah" name="jumlah" class="form-control" required min="1" max="5" value="1">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="status">Status</label>
+              <select name="status" id="status" class="form-select" required>
+                <option value="0">Pilih salah satu</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12 mt-3">
+            <div class="mt-3">
+              <button type="submit" class="btn btn-kirim">
+                <i class="fas fa-fw fa-paper-plane"></i> Kirim
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="row mt-5">
+          <div class="col-lg-12">
+
+        <div id="disqus_thread"></div>
+          <script>
+              /**
+              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+              *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+              /*
+              var disqus_config = function () {
+              this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+              */
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://fdigital.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Penutup Section -->
+<section id="penutup-section" class="penutup-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-title text-center">
+          <h1 class="text-pink huruf-sambung fw-bold">Wassalamu'alaikum</h1>
+          <p>Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan
+            memberikan do'a restu kepada kami.</p>
+          <h5 class="my-3">KAMI YANG BERBAHAGIA</h5>
+          <h1 class="huruf-sambung">Nobita & Shizuka</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer id="footer" class="mb-5 pb-5">
+  <div class="container py-5 text-center position-relative">
+    <div class="row">
+      <div class="col-12 my-3">
+        <a href="https://youtube.com/hauscoding" target="_blank" class="text-decoration-none text-pink fw-bold">
+          &copy; 2025. Made with by FdiDital
+        </a>
+      </div>
+      <div class="col-12 my-3">
+        <a href="#" class="text-pink">
+          <i class="fas fa-fw fa-arrow-up"></i> Back to top
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- Libs -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" async></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    <script id="dsq-count-scr" src="//fdigital.disqus.com/count.js" async></script>
+  </body>
 </html>
