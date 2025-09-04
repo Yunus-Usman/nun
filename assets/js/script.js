@@ -38,6 +38,7 @@ function mulai() {
   }, 2000);
 }
 
+
 // button music
 var isPlaying = true;
 function toggleMusic(event) {
@@ -70,16 +71,16 @@ var x = setInterval(function () {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   document.getElementById('countdown-wedding').innerHTML = `
-<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>${days}</h5> Hari</div></div>
-<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>${hours}</h5> Jam</div></div>
-<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>${minutes}</h5> Menit</div></div>
-<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>${seconds}</h5> Detik</div></div>
+<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-dark"><h5>${days}</h5> Hari</div></div>
+<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-dark"><h5>${hours}</h5> Jam</div></div>
+<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-dark"><h5>${minutes}</h5> Menit</div></div>
+<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-dark"><h5>${seconds}</h5> Detik</div></div>
   `;
 
   if (distance < 0) {
     clearInterval(x);
     document.getElementById('countdown-wedding').innerHTML =
-      "<span class='text-center p-3 rounded text-light m-2'><h2>Sudah dimulai!</h2></span>";
+      "<span class='text-center p-3 rounded text-dark m-2'><h2>Sudah dimulai!</h2></span>";
   }
 }, 1000);
 
