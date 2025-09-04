@@ -11,6 +11,10 @@
   --dark: #151515;
   --black: #000;
 }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body { overflow-x:hidden; }
 
 html {
   scroll-behavior: smooth;
@@ -93,6 +97,7 @@ body.transition {
   font-family: 'Sacramento', cursive;
 }
 
+
 /* navbar */
 .nav {
   position: fixed;
@@ -107,7 +112,7 @@ body.transition {
 }
 
 .nav li {
-  flex: 3;
+  flex: 1;
 }
 
 .nav li a {
@@ -119,7 +124,7 @@ body.transition {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 15px;
   z-index: 1;
   position: relative;
 }
@@ -127,16 +132,10 @@ body.transition {
 .nav li a:hover {
   color: var(--dark);
 }
-.nav li a.nav-item-music {
-  transform: translateY(-20%);
-  font-size: 20px;
-  top: 18px;
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
 
 nav .nav-music {
-  width: 90px;
-  height: 90px;
+  width: 100%;
+  height: auto;
   border-radius: 50%;
   background-color: var(--dark);
   position: absolute;
@@ -145,19 +144,55 @@ nav .nav-music {
   transform: translateX(-50%);
 }
 
-nav li a.rotate {
+
+.rotate {
+  display: inline-block;
   animation: rotateAnimation 5s linear infinite;
 }
+
 @keyframes rotateAnimation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
+.nav-item-music {
+  display: flex;
+  flex-direction: column; /* icon di atas, teks di bawah */
+  align-items: center;    /* teks rata tengah */
+  text-decoration: none;  /* hilangkan underline */
+  color: var(--white);    /* atur warna teks */
+  font-size: 14px;        /* ukuran teks label */
+}
+
+.nav-item-music .icon-label {
+  margin-top: 3px;        /* jarak antara icon dan teks */
+}
+
+
+#content-section {
+  overflow-x: hidden;
+}
+
+#content-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+#content-section::-webkit-scrollbar-track {
+  background: var(--pink-light);
+}
+
+#content-section::-webkit-scrollbar-thumb {
+  background: var(--pink);
+}
+
+#content-section::-webkit-scrollbar-thumb:hover {
+  background: var(--pink-hover);
+}
+
+
+
 /* hero section */
+
 #hero-section h1 {
   font-size: 64px;
 }
@@ -169,7 +204,8 @@ nav li a.rotate {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(241, 78, 149, 0.4);
+  /* background: rgba(241, 78, 149, 0.4); */
+  background: transparent;
 }
 
 #hero-section {
@@ -235,25 +271,6 @@ nav li a.rotate {
   background-color: var(--pink-muted);
 }
 
-#content-section {
-  overflow-x: hidden;
-}
-
-#content-section::-webkit-scrollbar {
-  width: 8px;
-}
-
-#content-section::-webkit-scrollbar-track {
-  background: var(--pink-light);
-}
-
-#content-section::-webkit-scrollbar-thumb {
-  background: var(--pink);
-}
-
-#content-section::-webkit-scrollbar-thumb:hover {
-  background: var(--pink-hover);
-}
 
 .card-acara {
   width: calc(50% - 10px);
@@ -512,7 +529,7 @@ nav li a.rotate {
 
 #penutup-section {
   position: relative;
-  height: 100vh;
+  height: 100%;
   color: var(--white);
   display: flex;
   align-items: center;
@@ -535,3 +552,63 @@ nav li a.rotate {
   background-position: center;
   background-size: cover;
 }
+
+
+#pembuka-section {
+  position: relative;
+  background: url('../img/wedding 2.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll; /* aman untuk hp */
+  color: var(--white);
+}
+
+
+#pembuka-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* overlay hitam transparan */
+  z-index: -1;
+}
+
+
+/* animasi bunga */
+
+/* pastikan section jadi "parent" positioning */
+#pembuka-section {
+  position: relative;
+  overflow: hidden; /* biar bunga ga keluar area */
+}
+
+/* style bunga */
+.flower {
+  position: absolute;
+  z-index: 0; /* biar di belakang konten */
+}
+
+.flower img {
+  width: 550px;
+  animation: sway 28s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transform-origin: bottom center;
+}
+/* atur posisi */
+.flower-top-left {
+  top: -220px;   /* geser ke atas sedikit */
+  left: -220px;  /* geser ke kiri sedikit */
+}
+
+.flower-bottom-right {
+  bottom: -220px;   /* geser ke atas sedikit */
+  right: -220px; /* geser ke kiri sedikit */
+}
+
+
+@keyframes sway {
+  0%   { transform: rotate(0deg) scale(1); }
+  20%  { transform: rotate(2deg) scale(1.01); }
+  40%  { transform: rotate(-2deg) scale(1.02); }
+  60%  { transform: rotate(1.5deg) scale(1.01); }
+  80%  { transform: rotate(-1.5deg) scale(1.02); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
