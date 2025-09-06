@@ -70,12 +70,13 @@ var x = setInterval(function () {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById('countdown-wedding').innerHTML = `
-<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-dark"><h5>${days}</h5> Hari</div></div>
-<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-dark"><h5>${hours}</h5> Jam</div></div>
-<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-dark"><h5>${minutes}</h5> Menit</div></div>
-<div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-dark"><h5>${seconds}</h5> Detik</div></div>
-  `;
+document.getElementById('countdown-wedding').innerHTML = `
+  <div class="col-lg-1 col-3"><div class="countdown-box"><h5>${days}</h5><small>Hari</small></div></div>
+  <div class="col-lg-1 col-3"><div class="countdown-box"><h5>${hours}</h5><small>Jam</small></div></div>
+  <div class="col-lg-1 col-3"><div class="countdown-box"><h5>${minutes}</h5><small>Menit</small></div></div>
+  <div class="col-lg-1 col-3"><div class="countdown-box"><h5>${seconds}</h5><small>Detik</small></div></div>
+`;
+
 
   if (distance < 0) {
     clearInterval(x);
@@ -164,3 +165,4 @@ window.addEventListener("load", function () {
       });
   });
 });
+
