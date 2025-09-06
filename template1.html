@@ -3,13 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fulan ❤️ Fulanah</title>
+    <title>Yunus ❤️ Riska</title>
     <!-- Favicon -->
     <link rel="icon" href="assets/img/favicon.png">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet">
+
+
     <!-- Aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- //lightbox2// -->
@@ -21,14 +26,14 @@
   </head>
   <body class="overflow-hidden"> 
     <!-- Music -->
-    <audio src="assets/music/wedding1.mp3" loop class="music"></audio>
+    <audio src="assets/music/wedding2.mp3" loop class="music"></audio>
     <!-- Sfx Door -->
     <audio src="assets/music/door.mp3" class="sound-door"></audio>
 
     <!-- Door Section -->
     <div id="door-section" class="open" onclick="mulai()">
-      <h1 class="heading-door left huruf-sambung">Yunus</h1>
-      <h1 class="heading-door right huruf-sambung">Fulanah</h1>
+      <!-- <h1 class="heading-door left">Yunus</h1>
+      <h1 class="heading-door right">Riska</h1> -->
       <div class="doors">
         <div class="door left">
           <img src="assets/img/door-left.png" alt="left door">
@@ -40,20 +45,26 @@
     </div>
 
 <!-- content section -->
+ <!-- <div class="music-control">
+
+      <li>
+      <a href="#" class="nav-item-music" id="music-button" onclick="toggleMusic(event)">
+    <i class="fas fa-fw fa-compact-disc rotate"></i>
+    <span class="icon-label">Music</span>
+      </a>
+    </li>
+ </div> -->
+
 <div id="content-section">
   <!-- navbar -->
   <ul class="nav">
-    <!-- Tombol Musik -->
-    <li>
-      <a href="#" class="nav-item-music rotate" id="music-button" onclick="toggleMusic(event)">
-        <i class="fas fa-fw fa-compact-disc"></i>
-      </a>
-    </li>
+    
 
     <!-- Acara -->
     <li>
       <a href="#acara-section">
         <i class="fas fa-fw fa-calendar-day"></i>
+        <span class="icon-label">Acara</span>
       </a>
     </li>
 
@@ -61,6 +72,7 @@
     <li>
       <a href="#lokasi-section">
         <i class="fas fa-fw fa-location-dot"></i>
+        <span class="icon-label">Lokasi</span>
       </a>
     </li>
 
@@ -68,20 +80,31 @@
     <li>
       <a href="#love-story-section">
         <i class="fas fa-fw fa-heart"></i>
+        <span class="icon-label">Story</span>
+      </a>
+    </li>
+
+    <!-- Tombol Musik -->
+    <li>
+      <a href="#" class="nav-item-music" id="music-button" onclick="toggleMusic(event)">
+    <i class="fas fa-fw fa-compact-disc rotate"></i>
+    <span class="icon-label">Music</span>
       </a>
     </li>
 
     <!-- Gallery -->
-    <li>
+    <!-- <li>
       <a href="#gallery-section">
         <i class="fas fa-fw fa-image"></i>
+        <span class="icon-label">Galeri</span>
       </a>
-    </li>
+    </li> -->
 
     <!-- Gift -->
     <li>
       <a href="#gift-section">
         <i class="fas fa-fw fa-gift"></i>
+        <span class="icon-label">Hadiah</span>
       </a>
     </li>
 
@@ -89,73 +112,95 @@
     <li>
       <a href="#rsvp-section">
         <i class="fas fa-fw fa-check-to-slot"></i>
+        <span class="icon-label">Rsvp</span>
       </a>
     </li>
+    
   </ul>
 </div>
-
+<!-- Hero Section -->
 <section id="hero-section" class="d-flex align-items-center">
-  <img src="assets/img/sparkle.gif" alt="sparkle" class="sparkle">
-  <div class="container text-center">
-    <h4 class="my-2 text-white">Kepada <span id="nama-sambutan"></span></h4>
-    <h1 class="my-2 text-white huruf-sambung">Nobita & Shizuka</h1>
-    <h4 class="my-2 text-white">Akan segera melangsungkan pernikahan pada tanggal</h4>
-    <h4 class="my-2 text-white fw-bold">Sabtu, 10 Februari 2026</h4>
+  <div class="hero-window">
+    <div class="container text-center hero-content">
+      <h4 class="my-2 text-dark fw-bold huruf-sambung">Walimatul Ursy</h4>
+      <h1 class="my-2 text-dark nama-mempelai">Yunus & Riska</h1>
+      <h4 class="my-2 text-dark">Save The Date</h4>
 
-    <div class="row my-3 d-flex justify-content-center" id="countdown-wedding">
-      <div class="col-lg-1 col-3">
-        <div class="text-center p-2 rounded text-light"><h5>0</h5> Hari</div>
+      <div class="row my-3 d-flex justify-content-center" id="countdown-wedding">
+        <div class="col-lg-1 col-3">
+          <div class="countdown-box"><h5>0</h5> Hari</div>
+        </div>
+        <div class="col-lg-1 col-3">
+          <div class="countdown-box"><h5>0</h5> Jam</div>
+        </div>
+        <div class="col-lg-1 col-3">
+          <div class="countdown-box"><h5>0</h5> Menit</div>
+        </div>
+        <div class="col-lg-1 col-3">
+          <div class="countdown-box"><h5>0</h5> Detik</div>
+        </div>
       </div>
-      <div class="col-lg-1 col-3">
-        <div class="text-center p-2 rounded text-light"><h5>0</h5> Jam</div>
-      </div>
-      <div class="col-lg-1 col-3">
-        <div class="text-center p-2 rounded text-light"><h5>0</h5> Menit</div>
-      </div>
-      <div class="col-lg-1 col-3">
-        <div class="text-center p-2 rounded text-light"><h5>0</h5> Detik</div>
-      </div>
+
+<h4 class="my-2 text-dark fw-bold dear-text">Dear:</h4>
+<h4 class="my-2 text-dark nama-sambutan"><span id="nama-sambutan"></span></h4>
+
+      <a href="#pembuka-section" class="btn-get-started">
+        <i class="fas fa-fw fa-envelope-open-text"></i> Buka Undangan
+      </a>
     </div>
-
-    <a href="#pembuka-section" class="rounded-pill btn btn-lg btn-get-started py-3">
-      <i class="fas fa-fw fa-envelope-open-text"></i> Buka Undangan
-    </a>
   </div>
+  
 </section>
+
 
 <!-- Section Pembuka -->
  <section id="pembuka-section" class="pembuka-section section-bg py-5">
+   <!-- dekorasi bunga -->
+  <div class="flower flower-top-left" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
+    <img src="assets/img/flower.png" alt="bunga" />
+  </div>
+  <div class="flower flower-bottom-right" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
+    <img src="assets/img/flower.png" alt="bunga" />
+  </div>
+
   <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <div class="section-title text-center">
-          <h1 class="text-pink huruf-sambung fw-bold">Assalamu'alaikum</h1>
-          <h3>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h3>
-          <p>
-            Wahai manusia, bertakwalah kepada Tuhanmu yang telah menciptakanmu dari diri yang satu (Adam) dan Dia menciptakan darinya pasangannya (Hawa). Dari keduanya Allah memperkembangbiakkan laki-laki dan perempuan yang banyak. (143) Bertakwalah kepada Allah yang dengan nama-Nya kamu saling meminta dan (peliharalah) hubungan kekeluargaan. Sesungguhnya Allah selalu menjaga dan mengawasimu.
-          </p>
-          <p>(QS. An-Nisa' (4): 1)</p>
-        </div>
-        <div class="row my-4 justify-content-center">
-          <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-            <img src="assets/img/wedding1.jpg" alt="wedding" class="img-fluid rounded-pill">
+        <div class="section-title text-center pentagon-bg">
+          
+  <h1 class="text-dark huruf-sambung fw-bold"> Assalamu'alaikum</h1>
+  <img class="basmalah" src="assets/img/basmalah.png" alt="">
+  <p class="text-dark qs fw-bold">
+    Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang.
+  </p>
+  <p class="qs">(QS. An-Nisa' (4): 1)</p><br>
+</div>
+
+        <div class="row my-4 justify-content-center ">
+          <div class="col-lg-8 text-center " data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+            <img src="assets/img/2mempelai.png" alt="wedding" class="img-fluid">
           </div>
         </div>
-        <div class="row my-3 justify-content-between">
-          <div class="col rounded" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
-            <div class="p-2 pt-3 text-center"></div>
-            <h1 class="text-center huruf-sambung">Nobita Nobi</h1>
-            <p>Putra pertama dari pasangan:</p>
-            <p>Nobisuke Nobi & Tamako Nobi</p>
-          </div>
+        
+        <div class="pentagon-bg2">
+          <div class="" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500" >
+        <div class="p-2 pt-3 text-center">
+          <h1 class="text-center nama-mempelai2 " >Yunus Usman</h1>
+          <div class="info-orangtua">
+           <p class="label-orangtua">Putra pertama dari pasangan:</p>
+           <p class="nama-orangtua">Nobisuke Nobi & Tamako Nobi</p>
+           </div>
+      </div>
+  </div>
+
           <div class="col-sm-1 my-auto" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-            <h1 class="text-center huruf-sambung">&</h1>
+            <h1 class="text-center dan">&</h1>
           </div>
-          <div class="col rounded" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
-            <div class="p-2 pt-3 text-center">
-              <h1 class="text-center huruf-sambung">Shizuka Minamoto</h1>
-              <p>Putri pertama dari pasangan:</p>
-              <p>Yoshio Minamoto & Michiko Minamoto</p>
+          <h1 class="text-center nama-mempelai2 " >Riska Nento</h1>
+          <div class="info-orangtua">
+           <p class="label-orangtua">Putri pertama dari pasangan:</p>
+           <p class="nama-orangtua">Nobisuke Nobi & Tamako Nobi</p>
+           </div>
             </div>
           </div>
         </div>
@@ -166,11 +211,16 @@
 
 <!-- Acara Section -->
 <section id="acara-section" class="acara-section py-5">
+
   <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="outlineflower" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
+        <img src="assets/img/outlineflower.png" alt="">
+    
+  </div>
     <div class="row justify-content-center">
-      <div class="col-lg-8">
+      <div class="col-lg-8 acara-content-wrapper py-4 px-3 rounded">
         <div class="section-title">
-          <h1 class="text-pink huruf-sambung fw-bold">Acara Pernikahan</h1>
+          <h1 class="fw-bold acara">Save The Date</h1>
           <p>
             Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restunya, kami ucapkan terima kasih.
           </p>
@@ -179,12 +229,12 @@
         <div class="row justify-content-between px-3 text-center">
           <!-- Akad Nikah -->
           <div class="col-lg-6 border my-2 rounded p-3 card-acara" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
-            <h4>Akad Nikah</h4>
+            <h4 class="fw-bold">Akad Nikah</h4>
             <hr>
             <p><i class="fas fa-fw fa-calendar-day"></i> Sabtu, 5 Oktober 2024</p>
             <p><i class="fas fa-fw fa-clock"></i> 09:00 WIB - 12:00 WIB</p>
             <p><i class="fas fa-fw fa-location-dot"></i> Lokasi di Jakarta</p>
-            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah&details=Akad+Nikah+Nobita+dan+Shizuka&location=Salah+satu+hotel+di+Jakarta&dates=20241005T020000Z%2F20241005T050000Z" 
+            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah&details=Akad+Nikah+Yunus+dan+Riska&location=Salah+satu+hotel+di+Jakarta&dates=20241005T020000Z%2F20241005T050000Z" 
                class="btn btn-lg btn-pink rounded-pill" target="_blank">
               <i class="fas fa-fw fa-calendar-day"></i> Simpan ke Kalender
             </a>
@@ -192,12 +242,12 @@
 
           <!-- Resepsi -->
           <div class="col-lg-6 border my-2 rounded p-3 card-acara" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
-            <h4>Resepsi</h4>
+            <h4 class="fw-bold">Resepsi</h4>
             <hr>
             <p><i class="fas fa-fw fa-calendar-day"></i> Minggu, 6 Oktober 2024</p>
             <p><i class="fas fa-fw fa-clock"></i> 09:00 WIB - 12:00 WIB</p>
             <p><i class="fas fa-fw fa-location-dot"></i> Lokasi di Jakarta</p>
-            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Nikah&details=Resepsi+Nikah+Nobita+dan+Shizuka&location=Salah+satu+hotel+di+Jakarta&dates=20241006T020000Z%2F20241006T050000Z" 
+            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Nikah&details=Resepsi+Nikah+Yunus+dan+Riska&location=Salah+satu+hotel+di+Jakarta&dates=20241006T020000Z%2F20241006T050000Z" 
                class="btn btn-lg btn-pink rounded-pill" target="_blank">
               <i class="fas fa-fw fa-calendar-day"></i> Simpan ke Kalender
             </a>
@@ -214,7 +264,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <div class="section-title">
-          <h1 class="text-pink huruf-sambung fw-bold">Lokasi Akad & Resepsi Pernikahan</h1>
+          <h1 class="text-dark  fw-bold tLokasi">Lokasi</h1>
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-12 text-center">
@@ -241,7 +291,7 @@
   <section id="love-story-section" class="love-story-section py-5">
     <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
       <div class="section-title">
-        <h1 class="text-pink huruf-sambung fw-bold">Love Story</h1>
+        <h1 class="text-dark fw-bold tlove">Love Story</h1>
       </div>
       <div class="row justify-content-center">
         <div class="col-lg">
@@ -257,7 +307,7 @@
         </div>
         <div class="timeline-body">
           <p>
-            Fulan dan Fulanah pertama kali saling mengenal melalui perantara seorang ustadz yang dipercaya. 
+            Yunus dan Riska pertama kali saling mengenal melalui perantara seorang ustadz yang dipercaya. 
             Dengan niat yang tulus mencari pasangan hidup, biodata keduanya saling dipertukarkan tanpa ada interaksi langsung.
           </p>
         </div>
@@ -274,7 +324,7 @@
         </div>
         <div class="timeline-body">
           <p>
-            Setelah melalui istikharah, Fulan dipertemukan dengan Fulanah dalam sebuah nadzor sederhana. 
+            Setelah melalui istikharah, Yunus dipertemukan dengan Riska dalam sebuah nadzor sederhana. 
             Pertemuan singkat itu menjadi langkah awal yang penuh keberkahan untuk saling melihat kesungguhan dan niat baik masing-masing.
           </p>
         </div>
@@ -291,7 +341,7 @@
         </div>
         <div class="timeline-body">
           <p>
-            Dengan izin Allah, Fulan bersama keluarganya datang melamar Fulanah secara resmi. 
+            Dengan izin Allah, Yunus bersama keluarganya datang melamar Riska secara resmi. 
             Lamaran diterima dengan penuh suka cita, menjadi tanda dimulainya ikatan yang lebih kuat menuju pernikahan.
           </p>
         </div>
@@ -325,7 +375,7 @@
         </div>
         <div class="timeline-body">
           <p>
-            Dengan lafaz akad yang sederhana namun penuh makna, Fulan resmi menikahi Fulanah. 
+            Dengan lafaz akad yang sederhana namun penuh makna, Yunus resmi menikahi Riska. 
             Doa dari keluarga dan kerabat mengiringi momen sakral ini, menjadikan keduanya suami istri yang sah di hadapan Allah.
           </p>
         </div>
@@ -359,7 +409,7 @@
         </div>
         <div class="timeline-body">
           <p>
-            Fulan dan Fulanah kini menjalani kehidupan rumah tangga dengan penuh cinta dan kasih sayang. 
+            Yunus dan Riska kini menjalani kehidupan rumah tangga dengan penuh cinta dan kasih sayang. 
             Mereka berkomitmen untuk saling menguatkan dalam taat kepada Allah, menapaki perjalanan bersama menuju ridha-Nya.
           </p>
         </div>
@@ -374,25 +424,25 @@
 
 
   <!-- Gallery Section -->
-<section id="gallery-section" class="gallery-section py-5 section-bg">
+<!-- <section id="gallery-section" class="gallery-section py-5 section-bg">
   <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
     <div class="section-title">
       <h1 class="huruf-sambung text-pink fw-bold">Gallery</h1>
     </div>
     <div class="row" data-masonry='{"percentPosition": true }'>
       <div class="col-sm-6 col-lg-4 mb-4">
-        <a href="assets/img/gallery/1.jpeg" data-lightbox="nobitaShizuka" class="text-decoration-none">
-          <img src="assets/img/gallery/1.jpeg" alt="Nobita & Shizuka" class="card-img border-pink">
+        <a href="assets/img/gallery/1.jpeg" data-lightbox="YunusRiska" class="text-decoration-none">
+          <img src="assets/img/gallery/1.jpeg" alt="Yunus & Riska" class="card-img border-pink">
         </a>
       </div>
       <div class="col-sm-6 col-lg-4 mb-4">
-        <a href="assets/img/gallery/1.jpeg" data-lightbox="nobitaShizuka" class="text-decoration-none">
-          <img src="assets/img/gallery/1.jpeg" alt="Nobita & Shizuka" class="card-img border-pink">
+        <a href="assets/img/gallery/1.jpeg" data-lightbox="YunusRiska" class="text-decoration-none">
+          <img src="assets/img/gallery/1.jpeg" alt="Yunus & Riska" class="card-img border-pink">
         </a>
       </div>
       <div class="col-sm-6 col-lg-4 mb-4">
-        <a href="assets/img/gallery/1.jpeg" data-lightbox="nobitaShizuka" class="text-decoration-none">
-          <img src="assets/img/gallery/1.jpeg" alt="Nobita & Shizuka" class="card-img border-pink">
+        <a href="assets/img/gallery/1.jpeg" data-lightbox="YunusRiska" class="text-decoration-none">
+          <img src="assets/img/gallery/1.jpeg" alt="Yunus & Riska" class="card-img border-pink">
         </a>
       </div>
     
@@ -405,7 +455,7 @@ strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>
   </div>
-</section>
+</section> -->
 
 <!-- Section Gift -->
 <section id="gift-section" class="gift-section py-5">
@@ -536,7 +586,7 @@ strict-origin-when-cross-origin" allowfullscreen></iframe>
           <p>Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan
             memberikan do'a restu kepada kami.</p>
           <h5 class="my-3">KAMI YANG BERBAHAGIA</h5>
-          <h1 class="huruf-sambung">Nobita & Shizuka</h1>
+          <h1 class="huruf-sambung">Yunus & Riska</h1>
         </div>
       </div>
     </div>
